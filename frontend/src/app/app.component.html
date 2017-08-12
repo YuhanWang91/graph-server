@@ -1,0 +1,21 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  select a stream server to subscribe:
+  <select (change)="onStreamServerChange($event.target.value)">
+    <option value="null">--None--</option>
+    <option *ngFor="let server of streamServers" [value]="server.url">{{server.label}}</option>
+  </select>
+  <div  *ngIf="graph && graph[0].series.length">
+    <ngx-charts-line-chart ngx-charts-line-chart
+      [view]="[600,200]"
+      [results]="graph"
+      [autoScale]="true"
+      [xAxis]="true" [yAxis]="true"
+      [showXAxisLabel]="true" [showYAxisLabel]="true"
+      [xAxisLabel]="'x'"
+      [yAxisLabel]="'y'">
+
+    </ngx-charts-line-chart>
+  </div>
+</div>
+
