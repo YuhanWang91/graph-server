@@ -22,7 +22,7 @@ here is a screenshot:
 ## System Design
 
 ### backend (Express + Socket.io)
-In backend, we have 1 master server and 3 stream server.
+In backend, we have 1 master server and 3 stream servers.
 
 #### Master Server ([backend/master-server.js](https://github.com/YuhanWang91/graph-server/blob/master/backend/master-server.js))
 
@@ -36,7 +36,7 @@ It has 2 RESTful endpoint:
 
 #### Stream Server ([backend/stream-server.js](https://github.com/YuhanWang91/graph-server/blob/master/backend/stream-server.js))
 The stream server will create a socket.io endpoint which emit (x,y) pair once it has been started.
-In ```backend/index.js```, we create 3 stream-server which generate curve:
+In ```backend/index.js```, we create 3 stream-servers which generate the following curves:
 
 * stream-server-1: y = x 
 * stream-server-2: y = x^(1/2)
